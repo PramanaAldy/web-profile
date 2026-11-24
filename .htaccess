@@ -1,0 +1,9 @@
+Options -Indexes
+
+<If "%{REQUEST_URI} =~ m#(?:^|/)\.(?!well-known(?:/|$))#i">
+    Require all denied
+</If>
+
+<FilesMatch "(?i)^(?:\.|database\.sql$|composer\.(?:json|lock)$|reset-admin-password\.ps1$)">
+    Require all denied
+</FilesMatch>
